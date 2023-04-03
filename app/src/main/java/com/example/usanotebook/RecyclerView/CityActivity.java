@@ -32,7 +32,7 @@ public class CityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_city);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         String[] gradovi = {"Madrid", "Pariz", "Barselona"};
         // popunimo listu sa proizvoljnim sadrzajem
@@ -59,6 +59,16 @@ public class CityActivity extends AppCompatActivity {
         });
         // povezemo RecyclerView sa adapterom
         recyclerView.setAdapter(mAdapter);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+        {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

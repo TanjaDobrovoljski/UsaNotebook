@@ -1,5 +1,6 @@
 package com.example.usanotebook;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -156,6 +158,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         }
         startActivity(intent);
     }
+
 
     /*
     public void showOptions(View view)

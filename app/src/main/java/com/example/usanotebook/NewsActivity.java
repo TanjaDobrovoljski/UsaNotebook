@@ -1,11 +1,13 @@
 package com.example.usanotebook;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +19,21 @@ public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragment_container, new NewsFragment())
                 .commit();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+        {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -38,5 +50,7 @@ public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnIte
                 .addToBackStack(null)
                 .commit();
     }
+
+
 
 }

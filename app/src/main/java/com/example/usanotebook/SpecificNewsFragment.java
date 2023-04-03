@@ -40,7 +40,7 @@ public class SpecificNewsFragment extends Fragment {
             ImageView imageView = rootView.findViewById(R.id.news_image);
             Picasso.get().load(newsArticle.getImageUrl()).into(imageView);
 
-
+            ((NewsActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             return rootView;
         }
     }

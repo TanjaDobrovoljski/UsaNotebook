@@ -5,6 +5,7 @@
     android:id="@+id/myConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_light_onSurface"
     tools:context=".WelcomeActivity"
     >
 
@@ -44,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@id/buttonCities"
         app:layout_constraintVertical_chainStyle="packed"
         android:textStyle="bold"
+
          />
 
     <Button
@@ -72,6 +74,7 @@
         android:textStyle="bold"
         android:elevation="2dp"
         />
+
 
 
 
