@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.usanotebook.NewsAdapter;
 import com.example.usanotebook.NewsArticle;
 import com.example.usanotebook.NewsArticleResponse;
+import com.example.usanotebook.RecyclerView.Item;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -38,6 +39,8 @@ public class NewsFragment extends Fragment {
     private RecyclerView newsRecyclerView;
     private NewsAdapter newsAdapter;
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,7 +49,9 @@ public class NewsFragment extends Fragment {
 
         newsRecyclerView = rootView.findViewById(R.id.news_recycler_view);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        fetchNewsArticles("sa"); //Saudijska arabija
+        fetchNewsArticles("us");
+
+
         return rootView;
     }
 
@@ -86,25 +91,45 @@ public class NewsFragment extends Fragment {
                         if (newsArticles.isEmpty()) {
                             System.out.println("newsArticles list is empty");
                         }
-                        getActivity().runOnUiThread(() -> {
-                            newsAdapter = new NewsAdapter(newsArticles);
-                            newsRecyclerView.setAdapter(newsAdapter);
-                        });
+
                     } catch (JsonSyntaxException e) {
                         System.out.println("Failed to deserialize JSON response: " + e.getMessage());
                         getActivity().runOnUiThread(() -> Toast.makeText(getActivity(), "Error fetching news articles", Toast.LENGTH_SHORT).show());
                     }
 
-                    for (NewsArticle i:newsArticles)
-                    {
-                        System.out.println("----->"+i.getTitle());
-                    }
-                    getActivity().runOnUiThread(() -> {
 
+                    getActivity().runOnUiThread(() -> {
                         newsAdapter = new NewsAdapter(newsArticles);
+                        newsAdapter.setOnItemClickListener(new NewsAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(NewsArticle newsArticle) {
+                                // Open NewsArticleFragment on item click
+                                SpecificNewsFragment newsArticleFragment = new SpecificNewsFragment();
+                                Bundle bundle = new Bundle();
+
+                                bundle.putParcelable("newsArticle", newsArticle);
+                                newsArticleFragment.setArguments(bundle);
+                                getParentFragmentManager()
+                                        .beginTransaction()
+                                        .replace(R.id.fragment_container, newsArticleFragment)
+                                        .addToBackStack(null)
+                                        .commit();
+                            }
+                       /*newsAdapter = new NewsAdapter(newsArticles);
+                        newsAdapter.setOnItemClickListener(new NewsAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(NewsArticle newsArticle) {
+                                Toast.makeText(getContext(), "Kliknuli ste na: " + newsArticle.getTitle(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        newsRecyclerView.setAdapter(newsAdapter);
+
+                        */
+                        });
                         newsRecyclerView.setAdapter(newsAdapter);
                     });
-                } else {
+                }
+                 else {
                     getActivity().runOnUiThread(() -> Toast.makeText(getActivity(), "Error fetching news articles", Toast.LENGTH_SHORT).show());
                 }
 

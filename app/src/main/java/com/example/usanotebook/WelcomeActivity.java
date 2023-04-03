@@ -39,10 +39,10 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_welcome);
 
         ImageView image=(ImageView)findViewById(R.id.imageView);
-        int imageResource=getResources().getIdentifier("drawable/saudi_background",null,this.getPackageName());
+        int imageResource=getResources().getIdentifier("drawable/background",null,this.getPackageName());
         image.setImageResource(imageResource);
         ImageView image2=(ImageView)findViewById(R.id.imageView2);
-        int imageResource2=getResources().getIdentifier("@drawable/saudi_background",null,this.getPackageName());
+        int imageResource2=getResources().getIdentifier("@drawable/background2",null,this.getPackageName());
         image2.setImageResource(imageResource2);
 
         findViewById(R.id.buttonCities).setOnClickListener(this);

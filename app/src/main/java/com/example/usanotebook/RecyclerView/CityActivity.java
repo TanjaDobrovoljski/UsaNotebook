@@ -1,5 +1,6 @@
 package com.example.usanotebook.RecyclerView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 import  com.example.usanotebook.RecyclerView.MyRecyclerAdapter;
 
 import com.example.usanotebook.R;
+import com.example.usanotebook.WelcomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,7 @@ public class CityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -56,6 +60,5 @@ public class CityActivity extends AppCompatActivity {
         // povezemo RecyclerView sa adapterom
         recyclerView.setAdapter(mAdapter);
     }
-
 
 }
