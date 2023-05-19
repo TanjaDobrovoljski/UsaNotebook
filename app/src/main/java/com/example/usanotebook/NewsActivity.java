@@ -19,7 +19,9 @@ public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+        setSupportActionBar(findViewById(R.id.toolbar));
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         getSupportFragmentManager()
                 .beginTransaction()

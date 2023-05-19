@@ -4,11 +4,11 @@
     android:layout_height="?android:attr/listPreferredItemHeight"
     >
     <Button
-        android:id="@+id/item_content"
+        android:id="@+id/sight_item_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        style="@style/CustomMaterialListButtonStyle">
+        android:layout_marginBottom="@dimen/margin_separator"
+        >
     </Button>
 
 </RelativeLayout>

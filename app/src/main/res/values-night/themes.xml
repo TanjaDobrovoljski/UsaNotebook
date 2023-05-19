@@ -1,6 +1,6 @@
 
 <resources>
-    <style name="AppTheme" parent="Theme.Material3.Dark">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -31,5 +31,26 @@
         <item name="colorOnSurfaceVariant">@color/md_theme_dark_onSurfaceVariant</item>
 
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
+        <item name="materialButtonStyle">@style/CustomMaterialButtonStyle</item>
     </style>
+
+    <style name="CustomFavoriteButtonStyle" parent="android:Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_favorite</item>
+
+    </style>
+
+    <style name="CustomMaterialButtonStyle" parent="TextAppearance.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="backgroundTint">@color/md_theme_dark_onPrimaryContainer</item>
+        <item name="strokeColor">@color/md_theme_light_primary</item>
+        <item name="strokeWidth">@dimen/border_width</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
 </resources>

@@ -59,6 +59,9 @@ public class CityActivity extends AppCompatActivity {
         });
         // povezemo RecyclerView sa adapterom
         recyclerView.setAdapter(mAdapter);
+
+        setSupportActionBar(findViewById(R.id.toolbar1));
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     @Override

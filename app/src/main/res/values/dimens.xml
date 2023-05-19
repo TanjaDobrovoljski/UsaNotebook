@@ -6,6 +6,7 @@
     <dimen name="header_text">20sp</dimen>
     <dimen name="border_width">7dp</dimen>
     <dimen name="list_margin">10dp</dimen>
-
-    <dimen name="child_text_size">20sp</dimen>
+    <dimen name="button_list_padding">15dp</dimen>
+    <dimen name="child_text_size">23sp</dimen>
+    <dimen name="margin_separator">10dp</dimen>
 </resources>

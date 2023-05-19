@@ -26,7 +26,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
-        public TextView tvContent;
         public View layout;
 
         public ViewHolder(View v) {

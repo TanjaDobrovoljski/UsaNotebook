@@ -1,35 +1,18 @@
 package com.example.usanotebook;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
+
 
 import com.example.usanotebook.RecyclerView.CityActivity;
-import com.example.usanotebook.RecyclerView.Item;
-import com.example.usanotebook.RecyclerView.MyRecyclerAdapter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import Sights.SightsActivity;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,6 +22,8 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        setSupportActionBar(findViewById(R.id.toolbar));
+        getSupportActionBar().setTitle(getString(R.string.app_name));
 
         ImageView image=(ImageView)findViewById(R.id.imageView);
         int imageResource=getResources().getIdentifier("drawable/background",null,this.getPackageName());
@@ -147,7 +132,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                 intent = new Intent(WelcomeActivity.this, CityActivity.class);
                 break;
             case R.id.buttonSights:
-               // intent = new Intent(WelcomeActivity.this, .class);
+                intent = new Intent(WelcomeActivity.this, SightsActivity.class);
                 break;
             case R.id.buttonNews:
                 intent = new Intent(WelcomeActivity.this, NewsActivity.class);
