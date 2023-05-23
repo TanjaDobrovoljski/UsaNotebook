@@ -65,7 +65,7 @@ public class SightsActivity extends AppCompatActivity implements View.OnClickLis
         });*/
 
     }
-    @Override
+   /* @Override
     public void onClick(View view) {
         Fragment fragment = null;
 
@@ -73,6 +73,7 @@ public class SightsActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.dugme:
                 fragment = new SightFragment();
                 break;
+
            /* case R.id.buttonSights:
                 intent = new Intent(WelcomeActivity.this, SightsActivity.class);
                 break;
@@ -82,13 +83,33 @@ public class SightsActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.buttonGeneral:
                 // intent = new Intent(WelcomeActivity.this, SightsActivity.class);
                 break;*/
-        }
-        if (fragment != null) {
+
+       /* if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.fragmentContainer, fragment); // Replace "fragmentContainer" with the ID of the container where you want to display the fragment
             transaction.addToBackStack(null); // Add the fragment to the back stack
             transaction.commit();
         }
+    }*/
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = null;
+        String title="";
+
+
+        switch (view.getId()) {
+            case R.id.dugme:
+                intent = new Intent(SightsActivity.this, SpecificSightActivity.class);
+                title=((Button) findViewById(R.id.dugme)).getText().toString();
+                intent.putExtra("title",title);
+                break;
+           // case R.id.dugme2:
+             //   intent = new Intent(WelcomeActivity.this, SightsActivity.class);
+               // break;
+
+        }
+        startActivity(intent);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

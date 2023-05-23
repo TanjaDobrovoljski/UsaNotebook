@@ -23,7 +23,7 @@ public class SightApi {
     // Set the request parameters, including the API key
     public void searchSightImage(String sightName, ImageView imageView) {
         OkHttpClient client = new OkHttpClient();
-
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         // Build the API request URL
         HttpUrl url = HttpUrl.parse("https://api.flickr.com/services/rest").newBuilder()
                 .addQueryParameter("method", "flickr.photos.search")
@@ -32,7 +32,7 @@ public class SightApi {
                 .addQueryParameter("format", "json")
                 .addQueryParameter("nojsoncallback", "1")
                 .build();
-
+        System.out.println("API Request URL: " + url);
         // Create the API request
         Request request = new Request.Builder()
                 .url(url)

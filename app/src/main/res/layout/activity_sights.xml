@@ -23,7 +23,7 @@
         android:id="@+id/dugme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="nesto"
+        android:text="Statue of Liberty"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"

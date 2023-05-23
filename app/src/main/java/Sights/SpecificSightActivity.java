@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+
 
 import com.example.usanotebook.R;
 
@@ -20,6 +22,11 @@ public class SpecificSightActivity extends AppCompatActivity {
 
         // Set the activity title
        getSupportActionBar().setTitle(title);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, new SightFragment())
+                .commit();
     }
 
     @Override
