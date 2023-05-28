@@ -14,6 +14,9 @@ import com.example.usanotebook.RecyclerView.CityActivity;
 
 import Sights.SightsActivity;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -24,6 +27,8 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_welcome);
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setTitle(getString(R.string.app_name));
+
+
 
         ImageView image=(ImageView)findViewById(R.id.imageView);
         int imageResource=getResources().getIdentifier("drawable/background",null,this.getPackageName());

@@ -1,41 +1,55 @@
-<!-- famous_sight_layout.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/titleTextView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:padding="16dp" />
+        android:layout_height="wrap_content">
 
-    <!-- Picture -->
-    <ImageView
-        android:id="@+id/pictureImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        />
+        <!-- Title -->
+        <ImageView
+            android:id="@+id/pictureImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
 
-    <!-- Description -->
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pictureImageView"
-        android:padding="16dp" />
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:text="Nesto ovjde pise kao opis"
+            android:layout_below="@id/pictureImageView" />
 
-    <!-- Button for Google Maps -->
-    <Button
-        android:id="@+id/showOnMapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descriptionTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Show on Google Maps" />
+        <!-- Description -->
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:text="a ovo je sescription"
+            android:padding="16dp" />
 
-</RelativeLayout>
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/sightVideo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/video_height"
+            android:layout_below="@id/descriptionTextView"
+            android:layout_centerInParent="true"
+           />
+        <!-- Button for Google Maps -->
+        <Button
+            android:id="@+id/showOnMapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sightVideo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Show on Google Maps" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -20,6 +20,12 @@ public class SightItem {
         this.server = server;
         this.farm = farm;
     }
+    public SightItem (String title,String description,Tuple<Double,Double> coordinates)
+    {
+        this.title=title;
+        this.description=description;
+        this.coordinates=coordinates;
+    }
 
     public void setId(String id) {
         this.id = id;

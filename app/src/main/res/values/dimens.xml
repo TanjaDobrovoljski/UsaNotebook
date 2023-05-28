@@ -9,4 +9,5 @@
     <dimen name="button_list_padding">15dp</dimen>
     <dimen name="child_text_size">23sp</dimen>
     <dimen name="margin_separator">10dp</dimen>
+    <dimen name="video_height">500dp</dimen>
 </resources>

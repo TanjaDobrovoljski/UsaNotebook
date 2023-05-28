@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SightsActivity extends AppCompatActivity implements View.OnClickListener {
+public class SightsActivity extends AppCompatActivity{
 
     private SightApi sightApi;
     @Override
@@ -36,8 +36,25 @@ public class SightsActivity extends AppCompatActivity implements View.OnClickLis
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        findViewById(R.id.dugme).setOnClickListener(this);
-        findViewById(R.id.dugme2).setOnClickListener(this);
+
+        Button button1 = findViewById(R.id.dugme);
+        Button button2 = findViewById(R.id.dugme2);
+        // Add references to other buttons
+
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SightsActivity.this, SpecificSightActivity.class);
+                String title = ((Button) view).getText().toString();
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        };
+
+        button1.setOnClickListener(buttonClickListener);
+        button2.setOnClickListener(buttonClickListener);
+        // Set the same listener for other buttons
+
         /*sightApi = new SightApi();
         final ConstraintLayout layout = findViewById(R.id.root);
         final Map<Button, TextView> buttonTextViewMap = new HashMap<>();
@@ -92,25 +109,6 @@ public class SightsActivity extends AppCompatActivity implements View.OnClickLis
         }
     }*/
 
-    @Override
-    public void onClick(View view) {
-        Intent intent = null;
-        String title="";
-
-
-        switch (view.getId()) {
-            case R.id.dugme:
-                intent = new Intent(SightsActivity.this, SpecificSightActivity.class);
-                title=((Button) findViewById(R.id.dugme)).getText().toString();
-                intent.putExtra("title",title);
-                break;
-           // case R.id.dugme2:
-             //   intent = new Intent(WelcomeActivity.this, SightsActivity.class);
-               // break;
-
-        }
-        startActivity(intent);
-    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)
