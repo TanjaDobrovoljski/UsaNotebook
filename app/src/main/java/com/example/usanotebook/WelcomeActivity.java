@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 
 import com.example.usanotebook.RecyclerView.CityActivity;
 
+import Settings.SettingsActivity;
 import Sights.SightsActivity;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -125,7 +127,23 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.main,menu);
+
         return  true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.app_settings) {
+            // Handle the click on the "Open Activity" menu item
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        // Handle other menu item clicks if needed
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
