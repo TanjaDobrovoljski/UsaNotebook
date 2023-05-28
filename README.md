@@ -50,7 +50,4 @@ Potrebno je voditi računa da GUI bude minimalistički i da se izabere odgovaraj
 srodnih boja kako bi se postigao što bolji korisnički doživljaj (UX). Sve stilske elemente
 potrebno je definisati kroz odvojene stilove i teme kako bi se postigla što veća fleksibilnost i
 modularnost koda.
-Na odbranu je potrebno donijeti kompletan izvorni kod projektnog zadatka. Prije
-odbrane, aplikaciju je potrebno objaviti na Google Play Store-u. Projektni zadatak važi od 1.
-junsko-julskog roka šk. 2021/2022 godine i vrijedi do objavljivanja sljedećeg projektnog
-zadatka.
+
