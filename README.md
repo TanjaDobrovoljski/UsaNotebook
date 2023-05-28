@@ -1,9 +1,5 @@
 # UsaNotebook
-Elektrotehnički fakultet Banja Luka
-Katedra za računarstvo i informatiku
-Mobilno računarstvo
-Projektni zadatak
-Zadatak
+
 Napisati Android aplikaciju koja predstavlja geografski priručnik za proizvoljnu
 državu. Aplikacija se sastoji iz minimalno sljedećih kategorija:
 • Gradovi
